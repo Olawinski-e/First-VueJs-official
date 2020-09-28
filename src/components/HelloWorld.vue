@@ -10,9 +10,7 @@
     <br />
     <div>
       <ol>
-        <li>
-          {{ todo.text }}
-        </li>
+        <li></li>
       </ol>
     </div>
     <br />
@@ -38,11 +36,12 @@ export default {
         { text: "Learn Vue" },
         { text: "Build something awesome" },
       ],
+      message2: "Hello Vue.js!",
     };
   },
   methods: {
     reverseMessage: function() {
-      this.message = this.message
+      this.message2 = this.message2
         .split("")
         .reverse()
         .join("");
