@@ -1,30 +1,28 @@
 <template>
-  <div class="hello">
-    <h1 v-once>{{ msg }}</h1>
-    <span v-bind:title="message">
-      Hover your mouse over me for a few seconds to see my dynamically bound
-      title!
-    </span>
+  <h1 v-once>{{ msg }}</h1>
+  <span v-bind:title="message">
+    Hover your mouse over me for a few seconds to see my dynamically bound
+    title!
+  </span>
+  <br />
+  <span v-if="seen">Now you see me</span>
+  <br />
+  <div>
+    <input v-model="newCat" />
+    <button v-on:click="addKitty">
+      + ADD
+    </button>
     <br />
-    <span v-if="seen">Now you see me</span>
+    <button v-on:click="count++">You clicked me {{ count }} times.</button>
     <br />
-    <div>
-      <input v-model="newCat" />
-      <button v-on:click="addKitty">
-        + ADD
-      </button>
-      <br />
-      <button v-on:click="count++">You clicked me {{ count }} times.</button>
-      <br />
-      <ul>
-        <li v-for="(cat, index) in cats" :key="index">{{ cat.name }}</li>
-      </ul>
-    </div>
-    <br />
-    <div id="app">
-      <p>{{ message2 }}</p>
-      <button v-on:click="reverseMessage">Reverse Message</button>
-    </div>
+    <ul>
+      <li v-for="(cat, index) in cats" :key="index">{{ cat.name }}</li>
+    </ul>
+  </div>
+  <br />
+  <div id="app">
+    <p>{{ message2 }}</p>
+    <button v-on:click="reverseMessage">Reverse Message</button>
   </div>
 </template>
 
