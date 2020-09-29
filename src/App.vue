@@ -1,18 +1,14 @@
 <template>
-  <Quizz />
-  <hr />
   <HelloWorld msg="Hello Vue!" />
 </template>
 
 <script>
 import HelloWorld from "./components/HelloWorld";
-import Quizz from "./Quizz";
 
 export default {
   name: "App",
   components: {
     HelloWorld,
-    Quizz,
   },
 };
 </script>
