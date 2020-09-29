@@ -13,7 +13,9 @@
       <button v-on:click="addKitty">
         + ADD
       </button>
-
+      <br />
+      <button v-on:click="count++">You clicked me {{ count }} times.</button>
+      <br />
       <ul>
         <li v-for="(cat, index) in cats" :key="index">{{ cat.name }}</li>
       </ul>
@@ -37,6 +39,7 @@ export default {
       message: "You loaded this page on " + new Date().toLocaleString(),
       seen: true,
       message2: "Hello Vue.js!",
+      count: 0,
       cats: [{ name: "chat" }, { name: "petitchat" }, { name: "paté" }],
     };
   },
