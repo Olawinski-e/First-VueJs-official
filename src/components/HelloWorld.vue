@@ -9,9 +9,14 @@
     <span v-if="seen">Now you see me</span>
     <br />
     <div>
-      <ol>
-        <li></li>
-      </ol>
+      <input v-model="newCat" />
+      <button v-on:click="addKitty">
+        + ADD
+      </button>
+
+      <ul>
+        <li v-for="(cat, index) in cats" :key="index">{{ cat.name }}</li>
+      </ul>
     </div>
     <br />
     <div id="app">
@@ -31,12 +36,8 @@ export default {
     return {
       message: "You loaded this page on " + new Date().toLocaleString(),
       seen: true,
-      todos: [
-        { text: "Learn JavaScript" },
-        { text: "Learn Vue" },
-        { text: "Build something awesome" },
-      ],
       message2: "Hello Vue.js!",
+      cats: [{ name: "chat" }, { name: "petitchat" }, { name: "paté" }],
     };
   },
   methods: {
@@ -46,24 +47,16 @@ export default {
         .reverse()
         .join("");
     },
+    addKitty: function() {
+      return this.cats.push(this.newCat);
+    },
   },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+h1 {
+  margin: 20px 0 0;
 }
 </style>
